@@ -104,6 +104,7 @@ def test2(name):
     print(name,"in the test2")
 # 调用test2,先把test1()注销
 # test1()
+# test2 = deco = timer(test2)
 test2('vanyo')
 ```
 输出结果（报错）：TypeError: deco() takes 0 positional arguments but 1 was given,表示deco函数需要传入一个参数
