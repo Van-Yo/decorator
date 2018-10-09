@@ -13,8 +13,8 @@ def test2():
 test1()
 test2()
 ```
-输出结果为：
-
+输出结果：<br>
+![temple1](https://github.com/Van-Yo/decorator/blob/master/result1.png)
 ### 2.现在需要为这两个函数分别添加一个相同的功能：计算函数运行时间,前提是不破坏原函数且正常调用test1(),test2()
 尝试 1: 定义一个高阶函数
 ```
@@ -28,8 +28,8 @@ def deco(func):
 deco(test1)
 deco(test2)
 ```
-输出结果：
-
+输出结果：<br>
+![temple1](https://github.com/Van-Yo/decorator/blob/master/result2.png)
 ### 3.结果显示两个test函数分别都加入新功能，并且没有去修改原函数，但是，调取函数的时候并不是用的test1(),test2(),因此不符合修饰器的定义
 尝试 2: 将高阶函数中的func()改成return func,表示将参数的函数地址返回
 ```
@@ -45,8 +45,8 @@ test1()
 test2 = deco(test2)
 test2()
 ```
-输出结果：
-
+输出结果：<br>
+![temple1](https://github.com/Van-Yo/decorator/blob/master/result3.png)
 ### 4.可以发现这时候return的特性就发挥出来了：一旦return，后面的语句将不再运行；到目前为止，只运用到高阶函数，嵌套函数还未使用，嵌套函数的格式：
 ```
 def timer():
@@ -73,8 +73,8 @@ test1()
 test2 = timer(test2)
 test2()
 ```
-输出结果：
-
+输出结果：<br>
+![temple1](https://github.com/Van-Yo/decorator/blob/master/result4.png)
 ### 5.到目前为止，已经实现了我们的需求，铺垫了这么多，就是为了引入修饰器,这样调用函数的时候就简单的多，不需要赋值地址
 尝试 4：加上修饰器
 ```
@@ -92,8 +92,8 @@ def test2():
 test1()
 test2()
 ```
-输出结果：
-
+输出结果：<br>
+![temple1](https://github.com/Van-Yo/decorator/blob/master/result5.png)
 ### 6.这样，一个最简单的修饰器就实现了，但是，我们发现我们命名的test1,test2函数过于简单，都没有形参，一旦有参数，修饰器会出现什么问题，应该怎么修改
 尝试 5：修改函数test2()，和修改调用test2()
 ```
@@ -123,8 +123,8 @@ def timer(func):
         print("the func's running time is %s" % (stop_time-start_time))
     return deco
 ```
-输出结果：
-
+输出结果：<br>
+![temple1](https://github.com/Van-Yo/decorator/blob/master/result6.png)
 ### 8.最后我们将test1()也解注了，test1()没有传入任何参数
 ```
 test1()
@@ -145,8 +145,8 @@ def timer(func):
         print("the func's running time is %s" % (stop_time-start_time))
     return deco
 ```
-输出结果：
-
+输出结果：<br>
+![temple1](https://github.com/Van-Yo/decorator/blob/master/result7.png)
 
 
 
